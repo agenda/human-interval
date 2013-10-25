@@ -1,0 +1,12 @@
+{
+  "name": "human-interval",
+  "version": "0.1.0",
+  "repo": "rschmukler/human-interval",
+  "description": "Human readable time measurements",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "scripts": [
+    "index.js",
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "human-interval",
+  "version": "0.1.0",
+  "description": "Human readable time measurements",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rschmukler/human-interval"
+  },
+  "keywords": [
+    "interval",
+    "time",
+    "date"
+  ],
+  "author": "Ryan Schmukler <ryan@slingingcode.com> (http://slingingcode.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rschmukler/human-interval/issues"
+  },
+  "devDependencies": {
+    "expect.js": "~0.2.0"
+  }
+}
