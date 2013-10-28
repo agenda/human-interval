@@ -6,6 +6,10 @@ describe('Human Interval', function() {
     expect(humanInterval(5000)).to.be(5000);
   });
 
+  it("returns undefined when given undefined", function() {
+    expect(humanInterval(undefined)).to.be(undefined);
+  });
+
   describe('basic units', function() {
     it('understands seconds', function() {
       expect(humanInterval('1 second')).to.be(1000);

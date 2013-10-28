@@ -1,4 +1,5 @@
 var humanInterval = module.exports = function humanInterval(time) {
+  if(!time) return time;
   if(typeof time == 'number') return time;
   time = swapLanguageToDecimals(time);
   time = time.replace(/(second|minute|hour|day|year)s?(?! ?(s )?and |s?$)/, '\$1,');
