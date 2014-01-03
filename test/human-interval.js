@@ -23,6 +23,9 @@ describe('Human Interval', function() {
     it('understands days', function() {
       expect(humanInterval('1 day')).to.be(86400000);
     });
+    it('understands weeks', function() {
+      expect(humanInterval('1 week')).to.be(7 * 86400000);
+    });
     it('understands years', function() {
       expect(humanInterval('1 year')).to.be(31536000000);
     });
