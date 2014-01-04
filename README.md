@@ -37,6 +37,8 @@ Human Interval supports the following units
 - `minutes`
 - `hours`
 - `days`
+- `weeks`
+- `months` -- assumes 30 days
 - `years` -- assumes 365 days
 
 ### Wordy Numbers
