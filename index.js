@@ -39,6 +39,8 @@ function processUnits(time) {
   var num = parseFloat(time, 10),
       unit = time.match(/(second|minute|hour|day|week|month|year)s?/)[1];
 
+  if(!num) num = 1;
+
   switch(unit) {
     case 'second': unit = 1000; break;
     case 'minute': unit = 1000 * 60; break;

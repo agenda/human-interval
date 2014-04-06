@@ -10,6 +10,10 @@ describe('Human Interval', function() {
     expect(humanInterval(undefined)).to.be(undefined);
   });
 
+  it('does not require a number', function() {
+      expect(humanInterval('week')).to.be(7 * 86400000);
+  });
+
   describe('basic units', function() {
     it('understands seconds', function() {
       expect(humanInterval('1 second')).to.be(1000);
