@@ -4,7 +4,7 @@ var humanInterval = module.exports = function humanInterval(time) {
   time = swapLanguageToDecimals(time);
   time = time.replace(/(second|minute|hour|day|week|month|year)s?(?! ?(s )?and |s?$)/, '$1,');
   return time.split(/and|,/).reduce(function(sum, group) {
-    return sum + processUnits(group);
+    return sum + (group != "" ? processUnits(group) : 0);
   }, 0);
 };
 
