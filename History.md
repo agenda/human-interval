@@ -1,3 +1,9 @@
+1.0.0 / 2015-07-27
+==================
+
+ * Fixed support for commas
+ * Added formatting of timestamps to a human-readable format in `.machine`
+ * Parsing moved to `.human`
 
 0.1.4 / 2014-04-06 
 ==================

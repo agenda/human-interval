@@ -1,5 +1,5 @@
 # Human Interval
-Human readable interval parser for Node.js/the Browser.
+Human readable interval parser and formatter for Node.js/the browser.
 
 Heavily inspired by
 [matthewmueller/date](http://github.com/matthewmueller/date).
@@ -12,7 +12,20 @@ var humanInterval = require('human-interval');
 
 setTimeout(function() {
   // Do something crazy!
-}, humanInterval('three minutes'));
+}, humanInterval.human('three minutes'));
+
+```
+
+```js
+var humanInterval = require('human-interval');
+
+var timeout = 124000;
+
+setTimeout(function() {
+  // Do something crazy!
+}, timeout);
+
+console.log("The action will be taken in " + humanInterval.machine(timeout));
 
 ```
 
@@ -21,10 +34,10 @@ setTimeout(function() {
 humanInterval understands all of the following examples:
 
 ```js
-humanInterval('one minute');
-humanInterval('1.5 minutes');
-humanInterval('3 days and 4 hours');
-humanInterval('3 days, 4 hours and 36 seconds');
+humanInterval.human('one minute');
+humanInterval.human('1.5 minutes');
+humanInterval.human('3 days and 4 hours');
+humanInterval.human('3 days, 4 hours and 36 seconds');
 ```
 
 ## The full list
@@ -40,6 +53,8 @@ Human Interval supports the following units
 - `weeks`
 - `months` -- assumes 30 days
 - `years` -- assumes 365 days
+
+You can access and modify this list through `humanInterval.units`. For example, you could do this to support customized units, or to localize names.
 
 ### Wordy Numbers
 
