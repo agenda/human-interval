@@ -116,3 +116,57 @@ describe('Machine Interval', function() {
     });
   });
 });
+
+function consistencyTest(val) {
+  expect(humanInterval.human(humanInterval.machine(val))).to.be(val);
+}
+
+describe('Consistency of .human(.machine())', function() {
+
+  /* If .human(.machine(val)) equals val, then the library produces output
+   *  that it can parse, as well as being consistent in handling values.
+   */
+
+  it("returns undefined when given undefined", function() {
+    consistencyTest(undefined);
+  });
+
+  describe('basic units', function() {
+    it('handles seconds', function() {
+      consistencyTest(1000);
+    });
+    it('handles minutes', function() {
+      consistencyTest(60000);
+    });
+    it('handles hours', function() {
+      consistencyTest(3600000);
+    });
+    it('handles days', function() {
+      consistencyTest(86400000);
+    });
+    it('handles weeks', function() {
+      consistencyTest(7 * 86400000);
+    });
+    it('handles months', function() {
+      consistencyTest(30 * 86400000);
+    });
+    it('handles years', function() {
+      consistencyTest(31536000000);
+    });
+  });
+
+  describe("basic numbers", function() {
+    it("handles numbers", function() {
+      consistencyTest(2000);
+      consistencyTest(
+        10*humanInterval.units.year  +
+        9*humanInterval.units.month +
+        3*humanInterval.units.week  +
+        2*humanInterval.units.day   +
+        8*humanInterval.units.hour  +
+        7*humanInterval.units.minute+
+        5*humanInterval.units.second
+      );
+    });
+  });
+});
