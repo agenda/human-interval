@@ -1,4 +1,9 @@
 
+0.1.5 / 2015-07-30
+==================
+
+  * Fixed a bug with commas, all tests are now passing
+
 0.1.4 / 2014-04-06 
 ==================
 
