@@ -1,6 +1,6 @@
 {
   "name": "human-interval",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Human readable time measurements",
   "main": "index.js",
   "scripts": {
