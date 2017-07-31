@@ -2,16 +2,16 @@ var expect = require('expect.js'),
     humanInterval = require('../index.js');
 
 describe('Human Interval', function() {
-  it("returns the number when given a number", function() {
+  it('returns the number when given a number', function() {
     expect(humanInterval(5000)).to.be(5000);
   });
 
-  it("returns undefined when given undefined", function() {
+  it('returns undefined when given undefined', function() {
     expect(humanInterval(undefined)).to.be(undefined);
   });
 
   it('does not require a number', function() {
-      expect(humanInterval('week')).to.be(7 * 86400000);
+    expect(humanInterval('week')).to.be(7 * 86400000);
   });
 
   describe('basic units', function() {
@@ -38,34 +38,41 @@ describe('Human Interval', function() {
     });
   });
 
-  describe("basic numbers", function() {
-    it("understands numbers", function() {
+  describe('basic numbers', function() {
+    it('understands numbers', function() {
       expect(humanInterval('2 seconds')).to.be(2000);
     });
 
-    it("understands decimals", function() {
+    it('understands decimals', function() {
       expect(humanInterval('2.5 seconds')).to.be(2500);
     });
   });
 
-  describe("english numbers", function() {
-    it("understands numbers", function() {
-      expect(humanInterval("two seconds")).to.be(2000);
+  describe('english numbers', function() {
+    it('understands numbers', function() {
+      expect(humanInterval('two seconds')).to.be(2000);
     });
   });
 
-  describe("mixes", function() {
-    it("works with long numbers", function() {
+  describe('mixes', function() {
+    it('works with long numbers', function() {
       expect(humanInterval('3 minutes and 30 seconds')).to.be(210000);
     });
 
-    it("works with mixed units", function() {
+    it('works with mixed units', function() {
       expect(humanInterval('3 minutes and 30 seconds')).to.be(210000);
     });
 
-    it("works with mixed time expressions", function() {
+    it('works with mixed time expressions', function() {
       expect(humanInterval('three minutes and 30 seconds')).to.be(210000);
       expect(humanInterval('three minutes 30 seconds')).to.be(210000);
+    });
+  });
+
+  describe('Error handling', function() {
+    it('throw error on unrecognised time unit', function() {
+      expect(humanInterval).withArgs('3 unrecognised').to.throwError();
+      expect(humanInterval).withArgs('3 seconds').to.not.throwError();
     });
   });
 });
