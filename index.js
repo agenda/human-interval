@@ -37,8 +37,12 @@ function swapLanguageToDecimals (time) {
 function processUnits (time) {
   var unit
   var num = parseFloat(time, 10)
-  if (time.match(/(second|minute|hour|day|week|month|year)s?/) !== null) unit = time.match(/(second|minute|hour|day|week|month|year)s?/)[1]
-  else unit = undefined
+  var unitMatch = time.match(/(second|minute|hour|day|week|month|year)s?/)
+  if (unitMatch) {
+    unit = unitMatch[1]
+  } else {
+    throw new Error('Unrecognised time unit. Use second(s), minute(s), hour(s), day(s), week(s), month(s), or year(s).')
+  }
   if (!num) num = 1
 
   switch (unit) {

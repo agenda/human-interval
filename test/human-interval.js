@@ -68,4 +68,11 @@ describe('Human Interval', function() {
       expect(humanInterval('three minutes 30 seconds')).to.be(210000);
     });
   });
+
+  describe('Error handling', function() {
+    it('throw error on unrecognised time unit', function() {
+      expect(humanInterval).withArgs('3 unrecognised').to.throwError();
+      expect(humanInterval).withArgs('3 seconds').to.not.throwError();
+    });
+  });
 });
