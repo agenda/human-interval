@@ -4,7 +4,7 @@
   "description": "Human readable time measurements",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "eslint test/* index.js && mocha --reporter spec --timeout 3500"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,8 @@
     "url": "https://github.com/rschmukler/human-interval/issues"
   },
   "devDependencies": {
-    "expect.js": "~0.2.0"
+    "eslint": "~4.3.0",
+    "expect.js": "~0.3.1",
+    "mocha": "~3.4.2"
   }
 }
