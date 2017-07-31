@@ -18,7 +18,7 @@ setTimeout(function() {
 
 ## More sophisticated examples
 
-humanInterval understands all of the following examples:
+Human Interval understands all of the following examples:
 
 ```js
 humanInterval('one minute');
@@ -54,3 +54,6 @@ humanInterval.languageMap['one-hundred'] = 100
 // Adds support for the following:
 humanInterval('one-hundred and fifty seconds') // returns 150000
 ```
+
+# License
+[The MIT License](LICENSE.md)
