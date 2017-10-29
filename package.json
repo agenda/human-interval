@@ -4,7 +4,7 @@
   "description": "Human readable time measurements",
   "main": "index.js",
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo && ava -v"
   },
   "repository": {
     "type": "git",
