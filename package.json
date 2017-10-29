@@ -4,7 +4,7 @@
   "description": "Human readable time measurements",
   "main": "index.js",
   "scripts": {
-    "test": "ava"
+    "test": "xo && ava"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,10 @@
     "url": "https://github.com/rschmukler/human-interval/issues"
   },
   "devDependencies": {
-    "ava": "^0.23.0"
+    "ava": "^0.23.0",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+      "space": 4
   }
 }
