@@ -1,5 +1,5 @@
 # Human Interval
-Human readable interval parser for Node.js/the Browser.
+Human readable interval parser for Javascript.
 
 Heavily inspired by
 [matthewmueller/date](http://github.com/matthewmueller/date).
@@ -8,9 +8,9 @@ Heavily inspired by
 ## Example Usage
 
 ```js
-var humanInterval = require('human-interval');
+const humanInterval = require('human-interval');
 
-setTimeout(function() {
+setTimeout(() => {
   // Do something crazy!
 }, humanInterval('three minutes'));
 
@@ -48,7 +48,7 @@ want to extend it, you can do so by adding more keys to the language map.
 Alternatively you could add support for alternative languages.
 
 ```js
-var humanInterval = require('human-interval');
+const humanInterval = require('human-interval');
 humanInterval.languageMap['one-hundred'] = 100
 
 // Adds support for the following:
