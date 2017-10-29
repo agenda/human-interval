@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/rschmukler/human-interval"
+    "url": "git://github.com/agenda/human-interval"
   },
   "keywords": [
     "interval",
@@ -18,7 +18,7 @@
   "author": "Ryan Schmukler <ryan@slingingcode.com> (http://slingingcode.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rschmukler/human-interval/issues"
+    "url": "https://github.com/agenda/human-interval/issues"
   },
   "devDependencies": {
     "ava": "^0.23.0",
