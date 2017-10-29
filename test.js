@@ -2,8 +2,8 @@ const test = require('ava');
 const humanInterval = require('.');
 
 const macro = (t, inputs, expected) => {
-    inputs = Array.isArray(inputs) ? inputs : [inputs];
-    inputs.forEach(input => t.is(humanInterval(input), expected));
+  inputs = Array.isArray(inputs) ? inputs : [inputs];
+  inputs.forEach(input => t.is(humanInterval(input), expected));
 };
 
 test('returns the number when given a number', macro, 5000, 5000);

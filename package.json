@@ -25,6 +25,23 @@
     "xo": "^0.18.2"
   },
   "xo": {
-      "space": 4
+    "space": 2,
+    "rules": {
+        "space-before-function-paren": [
+            "error",
+            "never"
+        ],
+        "max-params": [
+            "error",
+            5
+        ],
+        "max-nested-callbacks": [
+            "error",
+            5
+        ]
+    },
+    "envs": [
+        "node"
+    ]
   }
 }
