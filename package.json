@@ -20,6 +20,9 @@
   "bugs": {
     "url": "https://github.com/agenda/human-interval/issues"
   },
+  "dependencies": {
+    "numbered": "^1.1.0"
+  },
   "devDependencies": {
     "ava": "3.13.0",
     "xo": "0.33.1"
