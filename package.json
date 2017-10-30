@@ -43,5 +43,8 @@
     "envs": [
         "node"
     ]
+  },
+  "dependencies": {
+    "numbered": "^1.1.0"
   }
 }

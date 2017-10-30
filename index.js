@@ -1,3 +1,5 @@
+const numbered = require('numbered');
+
 const units = {};
 units.second = 1000;
 units.minute = units.second * 60;
@@ -7,59 +9,34 @@ units.week = units.day * 7;
 units.month = units.day * 30;
 units.year = units.day * 365;
 
-const languageMap = {
-  one: 1,
-  two: 2,
-  three: 3,
-  four: 4,
-  five: 5,
-  six: 6,
-  seven: 7,
-  eight: 8,
-  nine: 9,
-  ten: 10
-};
-
-const swapLanguageToDecimals = time => {
-  const language = languageMap;
-  const languageMapRegex = new RegExp('(' + Object.keys(language).join('|') + ')', 'g');
-  const matches = time.match(languageMapRegex);
-  if (!matches) {
-    return time;
-  }
-
-  matches.forEach(match => {
-    const matchStr = language[match] > 1 ? language[match] : language[match].toString().slice(1);
-    time = time.replace(match, matchStr);
-  });
-  return time;
-};
-
-const processUnits = time => {
-  if (time.match(/(second|minute|hour|day|week|month|year)s?/) === null) {
-    return undefined;
-  }
-
-  const num = parseFloat(time, 10) || 1;
-  const unit = time.match(/(second|minute|hour|day|week|month|year)s?/)[1];
-
-  return units[unit] * num;
-};
+const regexp = /(second|minute|hour|day|week|month|year)s?/;
 
 const humanInterval = time => {
-  if (!time) {
+  if (!time || typeof time === 'number') {
     return time;
   }
-  if (typeof time === 'number') {
-    return time;
-  }
-  time = swapLanguageToDecimals(time);
-  time = time.replace(/(second|minute|hour|day|week|month|year)s?(?! ?(s )?and |s?$)/, '$1,');
-  return time.split(/and|,/).reduce((sum, group) => {
-    return sum + (group ? processUnits(group) : 0);
-  }, 0);
-};
 
-humanInterval.languageMap = languageMap;
+  let result = 0;
+
+  time = time.replace(/([^a-z0-9.-]|and)+/g, ' ');
+
+  for (;;) {
+    const match = time.match(regexp);
+    if (!match) {
+      return result;
+    }
+    const matchedNumber = time.substring(0, match.index).trim();
+    const unit = units[match[1]];
+    let number = 1;
+    if (matchedNumber.length !== 0) {
+      number = parseFloat(matchedNumber);
+      if (isNaN(number)) {
+        number = numbered.parse(matchedNumber);
+      }
+    }
+    result += number * unit;
+    time = time.substring(match.index + match[0].length);
+  }
+};
 
 module.exports = humanInterval;

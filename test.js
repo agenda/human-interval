@@ -19,5 +19,8 @@ test('understands years', macro, '1 year', 31536000000);
 test('understands numbers', macro, '2 seconds', 2000);
 test('understands decimals', macro, '2.5 seconds', 2500);
 test('understands english numbers', macro, 'two seconds', 2000);
+test('understands negative numbers', macro, '-2 seconds', -2000);
 test('works with mixed units', macro, '3 minutes and 30 seconds', 210000);
 test('works with mixed time expressions', macro, ['three minutes and 30 seconds', 'three minutes 30 seconds'], 210000);
+test('Understands 2 digit english numbers', macro, 'thirty three seconds', 33000);
+test('mix units + multi digit english numbers', macro, 'hundred and three seconds and twelve minutes', 823000);
