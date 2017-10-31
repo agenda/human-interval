@@ -44,17 +44,7 @@ Human Interval supports the following units
 
 ### Wordy Numbers
 
-Human Interval supports numbers up to ten being written out in English. If you
-want to extend it, you can do so by adding more keys to the language map.
-Alternatively you could add support for alternative languages.
-
-```js
-const humanInterval = require('human-interval');
-humanInterval.languageMap['one-hundred'] = 100
-
-// Adds support for the following:
-humanInterval('one-hundred and fifty seconds') // returns 150000
-```
+Human Interval supports English numbers being written out in English by using [node-numbered](https://github.com/blakeembrey/node-numbered).
 
 # License
 [The MIT License](LICENSE.md)
