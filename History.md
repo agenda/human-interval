@@ -1,4 +1,19 @@
 
+1.0.0 / 2019-06-06
+==================
+
+  Breaking
+
+  * Remove Component.js support — this tool has not been maintained since 2015 https://github.com/agenda/human-interval/pull/10
+  * Drop Node.js 4, 5 and 6 support — might still work but we're not testing for these anymore
+  
+  Internal development tooling
+  
+  * Update development dependencies
+  * Add MIT license
+  * Switch testing framework to Ava from Mocha https://github.com/agenda/human-interval/pull/16
+  * Use XO for linting
+
 0.1.6 / 2016-05-11
 ==================
 
