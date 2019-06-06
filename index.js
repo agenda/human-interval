@@ -50,9 +50,11 @@ const humanInterval = time => {
   if (!time) {
     return time;
   }
+
   if (typeof time === 'number') {
     return time;
   }
+
   time = swapLanguageToDecimals(time);
   time = time.replace(/(second|minute|hour|day|week|month|year)s?(?! ?(s )?and |s?$)/, '$1,');
   return time.split(/and|,/).reduce((sum, group) => {
