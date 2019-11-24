@@ -21,8 +21,8 @@
     "url": "https://github.com/agenda/human-interval/issues"
   },
   "devDependencies": {
-    "ava": "^2.0.0",
-    "xo": "^0.24.0"
+    "ava": "2.4.0",
+    "xo": "0.24.0"
   },
   "xo": {
     "space": 2,
