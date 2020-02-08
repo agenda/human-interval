@@ -2,6 +2,8 @@ Next
 ==================
 
 * Updated dev dependencies.
+* Stopped testing Node.js 8 in CI — migh still work of course.
+* Added more tests
 
 1.0.0 / 2019-11-24
 ==================
