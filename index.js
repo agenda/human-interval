@@ -40,7 +40,7 @@ const processUnits = time => {
     return undefined;
   }
 
-  const num = parseFloat(time, 10) || 1;
+  const num = parseFloat(time) || 1;
   const unit = time.match(/(second|minute|hour|day|week|month|year)s?/)[1];
 
   return units[unit] * num;
