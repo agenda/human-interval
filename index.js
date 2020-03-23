@@ -16,7 +16,7 @@ const humanInterval = time => {
     return time;
   }
 
-  let result = 0;
+  let result = NaN;
 
   time = time.replace(/([^a-z0-9.-]|and)+/g, ' ');
 
@@ -34,6 +34,10 @@ const humanInterval = time => {
       if (isNaN(number)) {
         number = numbered.parse(matchedNumber);
       }
+    }
+
+    if (isNaN(result)) {
+      result = 0;
     }
 
     result += number * unit;
