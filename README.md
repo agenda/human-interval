@@ -4,6 +4,7 @@ Human readable interval parser for Javascript.
 Heavily inspired by
 [matthewmueller/date](http://github.com/matthewmueller/date).
 
+**If you'd like to use this for job scheduling, then check out [Bree](https://jobscheduler.net).  Bree is a job scheduler for Node.js with built-in support for workers, cron expression syntax, human-friendly times, Dates, and more.**
 
 ## Example Usage
 
