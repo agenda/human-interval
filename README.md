@@ -1,11 +1,13 @@
 # Human Interval
-Human readable interval parser for Javascript.
+Human-readable interval parser for Javascript.
 
-Heavily inspired by
-[matthewmueller/date](http://github.com/matthewmueller/date).
+Converts words written in English to numbers by using [node-numbered](https://github.com/blakeembrey/node-numbered).
 
-This package converts words written in english to numbers by using [node-numbered](https://github.com/blakeembrey/node-numbered).
+Originally inspired by [matthewmueller/date](http://github.com/matthewmueller/date).
 
+## Uses
+
+Human Interval is used by job scheduling libraries such as [Agenda](https://github.com/Agenda/agenda#readme) and [Bree](https://jobscheduler.net). They are a job schedulers for Node.js with cron expression syntax, human-friendly times, Dates, and more!
 
 ## Example Usage
 
@@ -13,9 +15,8 @@ This package converts words written in english to numbers by using [node-numbere
 const humanInterval = require('human-interval');
 
 setTimeout(() => {
-  // Do something crazy!
+  // Do something!
 }, humanInterval('three minutes'));
-
 ```
 
 ## More sophisticated examples
@@ -33,37 +34,37 @@ humanInterval('4 months, 3 days, 5 hours and forty-five seconds');
 
 ## The full list
 
-### Supported Units
+### Units
 
-Human Interval supports the following units
+Supports the following units in the plural and singular forms:
 
 - `seconds`
 - `minutes`
 - `hours`
 - `days`
 - `weeks`
-- `months` -- assumes 30 days
-- `years` -- assumes 365 days
+- `months` — assumes 30 days
+- `years` — assumes 365 days
 
-### Wordy Numbers
+### Wordy numbers
 
-Human Interval supports numbers being written out in English words.
+Supports numbers being written out in English words.
 
 ```js
 humanInterval('five minutes');
 ```
 
-### Hyphenated Numbers
+### Hyphenated numbers
 
-Human Interval supports hyphenated numbers.
+Supports hyphenated numbers.
 
 ```js
 humanInterval('twenty-five seconds');
 ```
 
-### Negative Numbers
+### Negative numbers
 
-Human Interval supports negative numbers if the time starts with a `-` symbol immediately followed by a number.
+Supports negative numbers if the time starts with a `-` symbol immediately followed by a number.
 
 ```js
 humanInterval('-2 minutes');
