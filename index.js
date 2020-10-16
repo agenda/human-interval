@@ -16,9 +16,9 @@ const humanInterval = time => {
     return time;
   }
 
-  let result = NaN;
+  let result = Number.NaN;
 
-  time = time.replace(/([^a-z0-9.-]|and)+/g, ' ');
+  time = time.replace(/([^a-z\d.-]|and)+/g, ' ');
 
   for (;;) {
     const match = time.match(regexp);
@@ -30,13 +30,13 @@ const humanInterval = time => {
     const unit = units[match[1]];
     let number = 1;
     if (matchedNumber.length !== 0) {
-      number = parseFloat(matchedNumber);
-      if (isNaN(number)) {
+      number = Number.parseFloat(matchedNumber);
+      if (Number.isNaN(number)) {
         number = numbered.parse(matchedNumber);
       }
     }
 
-    if (isNaN(result)) {
+    if (Number.isNaN(result)) {
       result = 0;
     }
 
