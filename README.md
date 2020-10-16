@@ -9,7 +9,7 @@ Originally inspired by [matthewmueller/date](http://github.com/matthewmueller/da
 
 Human Interval is used by job scheduling libraries such as [Agenda](https://github.com/Agenda/agenda#readme) and [Bree](https://jobscheduler.net). They are a job schedulers for Node.js with cron expression syntax, human-friendly times, Dates, and more!
 
-## Example Usage
+## Example usage
 
 ```js
 const humanInterval = require('human-interval');
