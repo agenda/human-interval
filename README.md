@@ -1,10 +1,11 @@
 # Human Interval
 Human readable interval parser for Javascript.
 
-Heavily inspired by
-[matthewmueller/date](http://github.com/matthewmueller/date).
+Heavily inspired by [matthewmueller/date](http://github.com/matthewmueller/date).
 
-**If you'd like to use this for job scheduling, then check out [Bree](https://jobscheduler.net).  Bree is a job scheduler for Node.js with built-in support for workers, cron expression syntax, human-friendly times, Dates, and more.**
+## Uses
+
+Human Interval is used by job scheduling libraries such as [Agenda](https://github.com/Agenda/agenda#readme) and [Bree](https://jobscheduler.net). They are a job schedulers for Node.js with cron expression syntax, human-friendly times, Dates, and more!
 
 ## Example Usage
 
@@ -39,8 +40,8 @@ Human Interval supports the following units
 - `hours`
 - `days`
 - `weeks`
-- `months` -- assumes 30 days
-- `years` -- assumes 365 days
+- `months` — assumes 30 days
+- `years` — assumes 365 days
 
 ### Wordy Numbers
 
