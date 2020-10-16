@@ -42,7 +42,7 @@ const englishNumbers = [
 test('Returns undefined when given undefined', macro, undefined, undefined);
 test('Returns null when given null', macro, null, null);
 test('Returns empty string when given empty string', macro, '', '');
-test('Returns NaN when given unknown string', macro, 'foobar', NaN);
+test('Returns NaN when given unknown string', macro, 'foobar', Number.NaN);
 
 // Single values
 test('Returns the number when given a number', macro, 5000, 5000);
@@ -96,11 +96,11 @@ timeUnits.forEach(unit => {
 
 // English numbers
 // i.e. "one second === 1000"
-englishNumbers.forEach((num, i) => {
+englishNumbers.forEach((number, i) => {
   test(
-    'Understands english number ' + num,
+    'Understands english number ' + number,
     macro,
-    num + ' seconds',
+    number + ' seconds',
     (i + 1) * units.second
   );
 });

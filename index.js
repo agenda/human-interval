@@ -29,8 +29,8 @@ const swapLanguageToDecimals = time => {
   }
 
   matches.forEach(match => {
-    const matchStr = language[match] > 1 ? language[match] : language[match].toString().slice(1);
-    time = time.replace(match, matchStr);
+    const matchString = language[match] > 1 ? language[match] : language[match].toString().slice(1);
+    time = time.replace(match, matchString);
   });
   return time;
 };
@@ -40,10 +40,10 @@ const processUnits = time => {
     return undefined;
   }
 
-  const num = parseFloat(time) || 1;
+  const number = Number.parseFloat(time) || 1;
   const unit = time.match(/(second|minute|hour|day|week|month|year)s?/)[1];
 
-  return units[unit] * num;
+  return units[unit] * number;
 };
 
 const humanInterval = time => {
@@ -57,6 +57,7 @@ const humanInterval = time => {
 
   time = swapLanguageToDecimals(time);
   time = time.replace(/(second|minute|hour|day|week|month|year)s?(?! ?(s )?and |s?$)/, '$1,');
+  // eslint-disable-next-line unicorn/no-reduce
   return time.split(/and|,/).reduce((sum, group) => {
     return sum + (group ? processUnits(group) : 0);
   }, 0);
