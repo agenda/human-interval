@@ -105,7 +105,21 @@ englishNumbers.forEach((number, i) => {
   );
 });
 
+// Understands negative numbers
+// i.e. "-2 seconds === -2000"
+timeUnits.forEach(unit => {
+  test(
+    'Understands negative ' + unit + 's',
+    macro,
+    '-2 ' + unit + 's',
+    -2 * Number(units[unit])
+  );
+});
+
 // Mixed
-test('Works with mixed units in plural units', macro, ['3 minutes and 30 seconds', '3 minutes 30 seconds'], (3 * units.minute) + (30 * units.second));
-test('Works with mixed units in singular units', macro, ['1 minute and 1 second', '1 minute 1 second'], units.minute + units.second);
-test('Works with mixed time expressions', macro, ['three minutes and 30 seconds', 'three minutes 30 seconds'], (3 * units.minute) + (30 * units.second));
+test('Understands mixed units', macro, '3 minutes and 30 seconds', (3 * units.minute) + (30 * units.second));
+test('Understands mixed time expressions with plurals', macro, ['three minutes and 30 seconds', 'three minutes 30 seconds'], (3 * units.minute) + (30 * units.second));
+test('Understands mixed time expressions with singulars', macro, ['one minute and 1 second', 'one minute 1 second'], units.minute + units.second);
+test('Understands 2 digit english numbers', macro, 'thirty three seconds', 33 * units.second);
+test('Understands mix units + multi digit english numbers', macro, 'hundred and three seconds and twelve minutes', (103 * units.second) + (12 * units.minute));
+test('Understands hyphenated numbers', macro, 'three hundred and twenty-five seconds', (325 * units.second));
