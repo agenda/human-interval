@@ -29,7 +29,7 @@ const humanInterval = time => {
     const matchedNumber = time.slice(0, match.index).trim();
     const unit = units[match[1]];
     let number = 1;
-    if (matchedNumber.length !== 0) {
+    if (matchedNumber.length > 0) {
       number = Number.parseFloat(matchedNumber);
       if (Number.isNaN(number)) {
         number = numbered.parse(matchedNumber);
