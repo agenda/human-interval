@@ -2,7 +2,7 @@
 ==================
 
 * Export types ([#43](https://github.com/agenda/human-interval/pull/43))
-* Updated deve dependencies.
+* Updated dev dependencies.
 
 2.0.0 / 2020-10-16
 ==================
