@@ -1,3 +1,8 @@
+Next
+====
+
+* Export types ([#43](https://github.com/agenda/human-interval/pull/43))
+
 2.0.0 / 2020-10-16
 ==================
 
