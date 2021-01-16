@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Human readable time measurements",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "xo && ava -v"
   },
