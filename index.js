@@ -1,6 +1,7 @@
 const numbered = require('numbered');
 
 const units = {};
+units.millisecond = 1;
 units.second = 1000;
 units.minute = units.second * 60;
 units.hour = units.minute * 60;
@@ -9,7 +10,7 @@ units.week = units.day * 7;
 units.month = units.day * 30;
 units.year = units.day * 365;
 
-const regexp = /(second|minute|hour|day|week|month|year)s?/;
+const regexp = /(millisecond|second|minute|hour|day|week|month|year)s?/;
 
 const humanInterval = time => {
   if (!time || typeof time === 'number') {

@@ -16,6 +16,7 @@ units.month = units.day * 30;
 units.year = units.day * 365;
 
 const timeUnits = [
+  'millisecond',
   'second',
   'minute',
   'hour',
